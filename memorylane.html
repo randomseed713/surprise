@@ -28,7 +28,7 @@
         position: fixed;
         width: 100%;
         height: 100%;
-        z-index: -1;
+        z-index: 0;
         pointer-events: none;
       }
 
@@ -56,6 +56,8 @@
         max-width: 1200px;
         margin: 0 auto;
         padding: 2rem;
+        position: relative;
+        z-index: 10;
       }
 
       .header {
@@ -160,8 +162,8 @@
 
       .memory-card {
         flex: 0 0 auto;
-        width: clamp(260px, 80vw, 300px);
-        height: clamp(340px, 100vw, 400px);
+        width: 300px;
+        height: 400px;
         position: relative;
         border-radius: 24px;
         overflow: hidden;
@@ -292,10 +294,10 @@
       }
 
       .sticker {
-        position: absolute;
+        position: fixed;
         width: 60px;
         height: 60px;
-        z-index: 5;
+        z-index: 1;
         filter: drop-shadow(0 3px 5px rgba(0, 0, 0, 0.3));
         pointer-events: none;
         animation: float 3s ease-in-out infinite;
@@ -465,17 +467,23 @@
 
         .gallery {
           gap: 1rem;
-          padding: 1rem 0;
+          padding: 1rem 0.5rem;
+        }
+
+        .memory-card {
+          width: 280px;
+          height: 370px;
         }
 
         .sticker {
-          width: 45px;
-          height: 45px;
+          width: 40px;
+          height: 40px;
+          opacity: 0.6;
         }
 
         .card-tape {
-          width: 80px;
-          height: 30px;
+          width: 70px;
+          height: 25px;
         }
 
         .slideshow-controls {
@@ -485,6 +493,10 @@
         .btn {
           margin: 0.3rem;
         }
+
+        .confetti-piece {
+          opacity: 0.3 !important;
+        }
       }
 
       @media (max-width: 480px) {
@@ -493,7 +505,25 @@
         }
 
         .header {
-          margin-bottom: 2rem;
+          margin-bottom: 1.5rem;
+        }
+
+        .header h1 {
+          padding: 0 1rem;
+        }
+
+        .header p {
+          margin: 0 0.5rem;
+        }
+
+        .gallery {
+          padding: 1rem 0.25rem;
+        }
+
+        .memory-card {
+          width: 85vw;
+          max-width: 320px;
+          height: 450px;
         }
 
         .navigation-buttons {
@@ -510,18 +540,21 @@
         }
 
         .sticker {
-          width: 35px;
-          height: 35px;
+          display: none;
         }
 
         .card-sticker {
-          width: 30px;
-          height: 30px;
+          width: 25px;
+          height: 25px;
         }
 
         .balloon {
-          width: 40px;
-          height: 50px;
+          width: 30px;
+          height: 40px;
+        }
+
+        .confetti-piece {
+          display: none;
         }
 
         /* 在移动端点击卡片时显示说明文字 */
