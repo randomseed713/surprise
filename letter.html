@@ -199,8 +199,18 @@
                 padding: 15px;
             }
 
+            h1 {
+                font-size: clamp(1.3rem, 4.5vw, 2rem);
+            }
+
             .letter-container {
                 border-radius: 20px;
+                padding: clamp(18px, 4.5vw, 35px);
+            }
+
+            .letter {
+                font-size: clamp(0.9rem, 2.3vw, 1.05rem);
+                line-height: 1.7;
             }
 
             .floating-element {
@@ -215,16 +225,60 @@
         }
 
         @media (max-width: 480px) {
+            body {
+                overflow-x: hidden;
+            }
+
             .container {
                 padding: 10px;
+                max-width: 100%;
+            }
+
+            h1 {
+                font-size: clamp(1.2rem, 4vw, 1.6rem);
+                padding: 0 0.5rem;
             }
 
             .letter-container {
                 border-radius: 15px;
+                padding: 15px;
+                margin-bottom: 20px;
+            }
+
+            .letter {
+                font-size: clamp(0.88rem, 2.2vw, 0.95rem);
+                line-height: 1.6;
+                min-height: 150px;
             }
 
             .floating-element {
                 display: none;
+            }
+
+            .back-button {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+                margin-top: 15px;
+            }
+
+            .navigation {
+                text-align: center;
+                padding: 0 1rem;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .letter-container {
+                padding: 12px;
+            }
+
+            .letter {
+                font-size: 0.85rem;
+            }
+
+            .back-button {
+                padding: 8px 18px;
+                font-size: 0.85rem;
             }
         }
     </style>
