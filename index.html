@@ -2,16 +2,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>给最爱的妈妈！</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', Arial, sans-serif;
         }
 
         body {
-            background: linear-gradient(135deg, #ffeef8 0%, #fff5f7 50%, #f0f9ff 100%);
+            background: #FDF8F5;
             height: 100vh;
             overflow: hidden;
             display: flex;
@@ -19,65 +21,61 @@
             justify-content: center;
             align-items: center;
             position: relative;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
         }
 
         .container {
             text-align: center;
             z-index: 10;
-            padding: 3rem 2rem;
-            max-width: 900px;
-            background-color: rgba(255, 255, 255, 0.7);
-            border-radius: 30px;
-            backdrop-filter: blur(20px) saturate(180%);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+            padding: 0;
+            max-width: 700px;
+            background: transparent;
             transition: all 0.5s ease;
-            border: 1px solid rgba(255, 255, 255, 0.8);
-        }
-
-        .container:hover {
-            box-shadow: 0 12px 48px rgba(0, 0, 0, 0.12);
-            transform: translateY(-2px);
         }
 
         h1 {
-            font-size: 4rem;
+            font-size: 3.0em;
             font-weight: 600;
-            color: #1d1d1f;
-            margin-bottom: 1.5rem;
+            color: #3D333A;
+            margin-bottom: 2.5rem;
             opacity: 0;
             animation: bounce-in 1.5s forwards 0.5s;
-            letter-spacing: -0.02em;
-            line-height: 1.1;
+            letter-spacing: 0.02em;
+            line-height: 1.6;
+            font-family: 'Noto Serif SC', serif;
         }
 
         .subtitle {
-            font-size: 1.5rem;
-            font-weight: 400;
-            color: #6e6e73;
-            margin-bottom: 2rem;
+            font-size: 1.2rem;
+            font-weight: 300;
+            color: #3D333A;
+            margin-bottom: 3rem;
             opacity: 0;
-            line-height: 1.5;
+            line-height: 1.8;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .next-button {
-            padding: 1rem 2.5rem;
-            font-size: 1.2rem;
-            font-weight: 500;
-            background: linear-gradient(135deg, #ff6b9d 0%, #c44569 100%);
+            padding: 1rem 3rem;
+            font-size: 1.1rem;
+            font-weight: 400;
+            background: #C98698;
             color: white;
             border: none;
-            border-radius: 980px;
+            border-radius: 9999px;
             cursor: pointer;
-            box-shadow: 0 4px 16px rgba(255, 107, 157, 0.3);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 2px 8px rgba(201, 134, 152, 0.15);
+            transition: all 0.25s ease-out;
             opacity: 0;
             animation: fade-in 1s forwards 3s;
-            letter-spacing: 0.01em;
+            letter-spacing: 0.05em;
         }
 
         .next-button:hover {
-            transform: scale(1.02) translateY(-2px);
-            box-shadow: 0 8px 24px rgba(255, 107, 157, 0.4);
+            transform: scale(1.02);
+            box-shadow: 0 4px 16px rgba(201, 134, 152, 0.25);
         }
 
         .next-button:active {
@@ -326,14 +324,14 @@
 }</style></head>
 <body bis_register="W3sibWFzdGVyIjp0cnVlLCJleHRlbnNpb25JZCI6ImVwcGlvY2VtaG1ubGJoanBsY2drb2ZjaWllZ29tY29uIiwiYWRibG9ja2VyU3RhdHVzIjp7IkRJU1BMQVkiOiJkaXNhYmxlZCIsIkZBQ0VCT09LIjoiZGlzYWJsZWQiLCJUV0lUVEVSIjoiZGlzYWJsZWQiLCJSRURESVQiOiJkaXNhYmxlZCIsIlBJTlRFUkVTVCI6ImRpc2FibGVkIiwiSU5TVEFHUkFNIjoiZGlzYWJsZWQiLCJMSU5LRURJTiI6ImRpc2FibGVkIiwiQ09ORklHIjoiZGlzYWJsZWQifSwidmVyc2lvbiI6IjIuMC4yMiIsInNjb3JlIjoyMDAyMn1d" __processed_0f899d02-c977-4ac2-8af0-0af2181c0594__="true" data-new-gr-c-s-check-loaded="14.1235.0" data-gr-ext-installed="">
     <div class="container" bis_skin_checked="1">
-        <h1>给我最爱的妈妈<br></h1>
+        <h1><br>给最爱的妈妈</h1>
         <div class="typewriter-container" bis_skin_checked="1">
             <div class="subtitle typewriter-text" bis_skin_checked="1">
-                亲爱的妈妈！我为您准备了一份特别的礼物，点击继续！
+                亲爱的妈妈，您所有的付出<br>都值得这个世界上最美好的回馈
                 <span class="cursor"></span>
             </div>
         </div>
-        <button class="next-button" onclick="goToNextPage()">开始吧！✨</button>
+        <button class="next-button" onclick="goToNextPage()">深呼吸，点此查收</button>
     </div>
 
 
@@ -453,4 +451,7 @@
         window.addEventListener('resize', handleResize);
         handleResize();
     </script>
+
+    <!-- Signature -->
+    <div style="position: fixed; bottom: 10px; right: 20px; font-size: 0.75rem; color: rgba(61, 51, 58, 0.3); font-weight: 300; letter-spacing: 0.05em; z-index: 1000; pointer-events: none;">Made with love. 2024.</div>
 </body></html>

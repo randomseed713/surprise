@@ -19,61 +19,26 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
-        overflow: hidden;
+        justify-content: flex-start;
+        overflow-x: hidden;
+        overflow-y: auto;
         position: relative;
+        padding-top: 40px;
       }
 
-      /* Floating Balloons */
-      .balloon {
-        position: absolute;
-        width: 40px;
-        height: 50px;
-        border-radius: 50%;
-        animation: float 15s infinite ease-in-out;
-        z-index: 1;
-      }
 
-      @keyframes float {
-        0% {
-          transform: translateY(100vh) translateX(0);
-          opacity: 1;
-        }
-        100% {
-          transform: translateY(-100px) translateX(50px);
-          opacity: 0;
-        }
-      }
-
-      /* Confetti */
-      .confetti {
-        position: absolute;
-        width: 10px;
-        height: 10px;
-        background-color: #ffcc00;
-        opacity: 0;
-        animation: confettiFall 5s infinite ease-out;
-        z-index: 1;
-      }
-
-      @keyframes confettiFall {
-        0% {
-          transform: translateY(-10vh) rotate(0deg);
-          opacity: 1;
-        }
-        100% {
-          transform: translateY(100vh) rotate(720deg);
-          opacity: 0;
-        }
-      }
 
       /* Birthday Cake Container */
       .cake-container {
         position: relative;
         width: 300px;
         height: 300px;
-        margin: 20px auto;
+        margin: 20px auto 40px;
         z-index: 10;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
       }
 
       /* Cake Base */
@@ -123,14 +88,7 @@
         box-shadow: 0 0 5px #ffcce6;
       }
 
-      .decoration {
-        position: absolute;
-        width: 10px;
-        height: 10px;
-        border-radius: 50%;
-        background: #ff3366;
-        box-shadow: 0 0 5px #ff99b6;
-      }
+
 
       /* Candles */
       .candle-container {
@@ -294,19 +252,20 @@
       }
 
       .wish-message h2 {
-        font-size: 32px;
+        font-size: 28px;
         font-weight: 600;
         margin-bottom: 15px;
-        color: #1d1d1f;
-        letter-spacing: -0.02em;
+        color: #3D333A;
+        letter-spacing: 0.02em;
+        font-family: 'Noto Serif SC', serif;
       }
 
       .wish-message p {
-        color: #6e6e73;
-        font-size: 18px;
+        color: #3D333A;
+        font-size: 17px;
         margin-bottom: 25px;
-        line-height: 1.6;
-        font-weight: 400;
+        line-height: 1.8;
+        font-weight: 300;
       }
 
       /* Fireworks */
@@ -336,36 +295,100 @@
         }
       }
 
+      /* Instruction Text */
+      .instruction-text {
+        text-align: center;
+        font-size: 1.2rem;
+        color: #3D333A;
+        margin: 20px auto 30px;
+        padding: 0 20px;
+        opacity: 1;
+        transition: opacity 0.5s ease-out;
+        font-weight: 300;
+        letter-spacing: 0.02em;
+        z-index: 10;
+      }
+
+      .instruction-text.hidden {
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      /* Letter Section */
+      .letter-section {
+        max-width: 800px;
+        width: 100%;
+        padding: 0 20px 120px;
+        margin: 0 auto;
+        z-index: 10;
+      }
+
+      .letter-section h1 {
+        font-size: clamp(1.8rem, 5vw, 2.5rem);
+        font-weight: 600;
+        color: #3D333A;
+        margin-bottom: 30px;
+        letter-spacing: 0.02em;
+        font-family: 'Noto Serif SC', serif;
+        line-height: 1.6;
+        text-align: center;
+      }
+
+      .letter-container {
+        background: rgba(255, 255, 255, 0.6);
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+        padding: clamp(30px, 5vw, 50px);
+        box-shadow: 0 2px 16px rgba(0, 0, 0, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.7);
+      }
+
+      .letter {
+        font-size: clamp(1rem, 2.5vw, 1.15rem);
+        line-height: 2;
+        color: #3D333A;
+        font-weight: 300;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        white-space: pre-wrap;
+      }
+
       /* Navigation Buttons */
       .nav-buttons {
         position: fixed;
-        bottom: 30px;
+        bottom: 0;
         left: 0;
+        right: 0;
         width: 100%;
         display: flex;
         justify-content: space-between;
-        padding: 0 50px;
-        z-index: 50;
+        padding: 12px 20px 20px 20px;
+        z-index: 1000;
+        background: linear-gradient(to top, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.95) 70%, rgba(255, 255, 255, 0) 100%);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.08);
       }
 
       .btn {
+        flex: 1;
+        max-width: 180px;
         padding: 12px 28px;
-        background: linear-gradient(135deg, #ff6b9d 0%, #c44569 100%);
+        background: #C98698;
         color: white;
         border: none;
-        border-radius: 980px;
+        border-radius: 9999px;
         cursor: pointer;
-        font-size: 16px;
-        font-weight: 500;
-        box-shadow: 0 4px 16px rgba(255, 107, 157, 0.3);
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        font-size: 15px;
+        font-weight: 400;
+        box-shadow: 0 2px 8px rgba(201, 134, 152, 0.15);
+        transition: all 0.25s ease-out;
         outline: none;
-        letter-spacing: 0.01em;
+        letter-spacing: 0.05em;
       }
 
       .btn:hover {
-        transform: translateY(-2px) scale(1.02);
-        box-shadow: 0 8px 24px rgba(255, 107, 157, 0.4);
+        transform: scale(1.02);
+        box-shadow: 0 4px 16px rgba(201, 134, 152, 0.25);
       }
 
       .btn:active {
@@ -374,18 +397,46 @@
 
       /* Improved Responsive Design */
       @media (max-width: 768px) {
+        body {
+          padding-top: 30px;
+        }
+
         .cake-container {
-          width: 250px;
-          height: 250px;
+          width: 280px;
+          height: 280px;
+          margin: 20px auto 30px;
+        }
+
+        .letter-section {
+          padding: 0 15px 100px;
+        }
+
+        .letter-section h1 {
+          font-size: clamp(1.5rem, 4.5vw, 2rem);
+          margin-bottom: 25px;
+        }
+
+        .letter-container {
+          padding: clamp(20px, 4.5vw, 35px);
+        }
+
+        .letter {
+          font-size: clamp(0.95rem, 2.3vw, 1.05rem);
+          line-height: 1.8;
         }
 
         .cake {
-          width: 160px;
-          height: 90px;
+          width: 180px;
+          height: 100px;
         }
 
         .candle-container {
-          gap: 15px;
+          gap: 16px;
+        }
+
+        .instruction-text {
+          font-size: 1.1rem;
+          margin: 15px auto 25px;
         }
 
         .wish-message h2 {
@@ -397,60 +448,75 @@
         }
 
         .nav-buttons {
-          padding: 0 20px;
-          bottom: 20px;
+          padding: 12px 20px 20px 20px;
         }
 
         .btn {
-          padding: 10px 18px;
+          padding: 11px 20px;
           font-size: 15px;
         }
       }
 
       @media (max-width: 480px) {
+        body {
+          padding-top: 20px;
+        }
+
         .cake-container {
-          width: 200px;
-          height: 200px;
-          margin: 10px auto;
+          width: 260px;
+          height: 260px;
+          margin: 15px auto 25px;
         }
 
-        .cake {
-          width: 130px;
-          height: 80px;
+        .letter-section {
+          padding: 0 10px 90px;
         }
 
-        .candle-container {
-          gap: 12px;
-          top: -85px;
+        .letter-section h1 {
+          font-size: clamp(1.3rem, 4vw, 1.7rem);
+          margin-bottom: 20px;
         }
 
-        .candle {
-          width: 6px;
-          height: 25px;
+        .letter-container {
+          padding: 20px;
+          border-radius: 15px;
+        }
+
+        .letter {
+          font-size: clamp(0.9rem, 2.2vw, 0.98rem);
+          line-height: 1.7;
         }
 
         .wish-message {
-          width: 85%;
-          padding: 20px;
+          width: 88%;
+          max-width: 380px;
+          padding: 25px 20px;
+        }
+
+        .instruction-text {
+          font-size: 1rem;
+          margin: 12px auto 20px;
         }
 
         .wish-message h2 {
           font-size: 22px;
-          margin-bottom: 10px;
+          margin-bottom: 12px;
         }
 
         .wish-message p {
           font-size: 16px;
-          margin-bottom: 15px;
+          margin-bottom: 18px;
         }
 
         .nav-buttons {
-          padding: 0 15px;
-          bottom: 15px;
+          padding: 12px 16px 20px 16px;
+          gap: 10px;
         }
 
         .btn {
-          padding: 8px 14px;
+          flex: 1;
+          max-width: none;
+          padding: 12px 16px;
           font-size: 14px;
           white-space: nowrap;
         }
@@ -458,23 +524,37 @@
 
       /* Extra small devices */
       @media (max-width: 360px) {
+        body {
+          padding-top: 15px;
+        }
+
         .cake-container {
-          width: 180px;
-          height: 180px;
+          width: 240px;
+          height: 240px;
+          margin: 10px auto 20px;
         }
 
-        .cake {
-          width: 110px;
-          height: 70px;
+        .letter-section {
+          padding: 0 10px 85px;
         }
 
-        .candle-container {
-          gap: 10px;
+        .letter-container {
+          padding: 15px;
+        }
+
+        .letter {
+          font-size: 0.88rem;
+          line-height: 1.6;
         }
 
         .wish-message {
           width: 90%;
-          padding: 15px;
+          padding: 20px 16px;
+        }
+
+        .instruction-text {
+          font-size: 0.95rem;
+          margin: 10px auto 18px;
         }
 
         .wish-message h2 {
@@ -482,18 +562,16 @@
         }
 
         .wish-message p {
-          font-size: 14px;
+          font-size: 15px;
         }
 
         .nav-buttons {
-          flex-direction: column;
-          align-items: center;
-          gap: 10px;
+          padding: 10px 12px 18px 12px;
+          gap: 8px;
         }
 
         .btn {
-          width: 100%;
-          text-align: center;
+          padding: 10px 12px;
           font-size: 13px;
         }
       }
@@ -531,6 +609,11 @@
   >
     <!-- Balloons and Confetti will be added by JavaScript -->
 
+    <!-- Instruction Text -->
+    <div class="instruction-text" id="instructionText">
+      点击或滑过蜡烛来吹灭它们 🎂
+    </div>
+
     <!-- Birthday Cake -->
     <div class="cake-container" bis_skin_checked="1">
       <div class="cake" bis_skin_checked="1">
@@ -558,112 +641,30 @@
           </div>
         </div>
 
-        <!-- Frosting & Decorations -->
+        <!-- Frosting -->
         <div class="frosting" bis_skin_checked="1"></div>
-        <div
-          class="decoration"
-          bis_skin_checked="1"
-          style="
-            background-color: rgb(102, 204, 255);
-            top: -27.7843px;
-            left: 69.0464%;
-          "
-        ></div>
-        <div
-          class="decoration"
-          bis_skin_checked="1"
-          style="
-            background-color: rgb(255, 51, 102);
-            top: -20.9579px;
-            left: 63.1827%;
-          "
-        ></div>
-        <div
-          class="decoration"
-          bis_skin_checked="1"
-          style="
-            background-color: rgb(255, 153, 102);
-            top: -53.6883px;
-            left: 92.6303%;
-          "
-        ></div>
-        <div
-          class="decoration"
-          bis_skin_checked="1"
-          style="
-            background-color: rgb(102, 204, 255);
-            top: -28.5103px;
-            left: 15.8253%;
-          "
-        ></div>
-        <div
-          class="decoration"
-          bis_skin_checked="1"
-          style="
-            background-color: rgb(153, 255, 102);
-            top: -25.5573px;
-            left: 20.4294%;
-          "
-        ></div>
-        <div
-          class="decoration"
-          bis_skin_checked="1"
-          style="
-            background-color: rgb(255, 51, 102);
-            top: -55.9018px;
-            left: 22.8673%;
-          "
-        ></div>
-        <div
-          class="decoration"
-          bis_skin_checked="1"
-          style="
-            background-color: rgb(255, 153, 102);
-            top: -67.4554px;
-            left: 28.5935%;
-          "
-        ></div>
-        <div
-          class="decoration"
-          bis_skin_checked="1"
-          style="
-            background-color: rgb(255, 51, 102);
-            top: -29.2915px;
-            left: 2.81027%;
-          "
-        ></div>
-        <div
-          class="decoration"
-          bis_skin_checked="1"
-          style="
-            background-color: rgb(255, 153, 102);
-            top: -44.952px;
-            left: 98.2541%;
-          "
-        ></div>
-        <div
-          class="decoration"
-          bis_skin_checked="1"
-          style="
-            background-color: rgb(255, 153, 102);
-            top: -51.9292px;
-            left: 39.7651%;
-          "
-        ></div>
       </div>
     </div>
 
     <!-- Enhanced Wish Message Popup -->
     <div class="wish-message" id="wishMessage" bis_skin_checked="1">
-      <h2>✨ 妈妈，我爱您！✨</h2>
-      <p>亲爱的妈妈，许个愿吧！愿您永远健康快乐，所有的梦想都能实现！💖✨</p>
-      <button class="btn" onclick="closeWishMessage()">谢谢您！❤️</button>
+      <h2>妈妈，我爱您</h2>
+      <p>请允许我，为您开启这份<br>饱含心意与回忆的珍贵惊喜</p>
+      <button class="btn" onclick="closeWishMessage()">继续</button>
+    </div>
+
+    <!-- Letter Section -->
+    <div class="letter-section">
+      <h1>给我最亲爱的妈妈</h1>
+      <div class="letter-container">
+        <div class="letter" id="typed-text"></div>
+      </div>
     </div>
 
     <!-- Navigation Buttons -->
     <div class="nav-buttons" bis_skin_checked="1">
       <button class="btn" onclick="goBack()">◀ 返回</button>
-      <button class="btn" onclick="goNext()">下一个惊喜 ▶</button>
+      <button class="btn" onclick="goNext()">完成 ✓</button>
     </div>
 
     <script>
@@ -675,9 +676,6 @@
       // Initialize the page when it loads
       document.addEventListener("DOMContentLoaded", function () {
         createCandles();
-        createBalloons();
-        createConfetti();
-        createDecorations();
 
         // Add event listeners for candle interaction
         document.querySelectorAll(".candle").forEach((candle) => {
@@ -736,58 +734,9 @@
         }
       }
 
-      // Create floating balloons
-      function createBalloons() {
-        const colors = ["#ff66b3", "#66ccff", "#ff9966", "#99ff66", "#cc99ff"];
-        const numBalloons = 15;
 
-        for (let i = 0; i < numBalloons; i++) {
-          const balloon = document.createElement("div");
-          balloon.className = "balloon";
-          balloon.style.backgroundColor =
-            colors[Math.floor(Math.random() * colors.length)];
-          balloon.style.left = `${Math.random() * 100}%`;
-          balloon.style.animationDuration = `${15 + Math.random() * 10}s`;
-          balloon.style.animationDelay = `${Math.random() * 5}s`;
-          document.body.appendChild(balloon);
-        }
-      }
 
-      // Create confetti pieces
-      function createConfetti() {
-        const colors = ["#ffcc00", "#ff66b3", "#66ccff", "#ff9966", "#99ff66"];
-        const numConfetti = 50;
 
-        for (let i = 0; i < numConfetti; i++) {
-          const confetti = document.createElement("div");
-          confetti.className = "confetti";
-          confetti.style.backgroundColor =
-            colors[Math.floor(Math.random() * colors.length)];
-          confetti.style.left = `${Math.random() * 100}%`;
-          confetti.style.width = `${5 + Math.random() * 5}px`;
-          confetti.style.height = `${5 + Math.random() * 10}px`;
-          confetti.style.animationDuration = `${3 + Math.random() * 4}s`;
-          confetti.style.animationDelay = `${Math.random() * 5}s`;
-          document.body.appendChild(confetti);
-        }
-      }
-
-      // Create cake decorations
-      function createDecorations() {
-        const cake = document.querySelector(".cake");
-        const colors = ["#ff3366", "#ffcc00", "#66ccff", "#ff9966", "#99ff66"];
-        const numDecorations = 10;
-
-        for (let i = 0; i < numDecorations; i++) {
-          const decoration = document.createElement("div");
-          decoration.className = "decoration";
-          decoration.style.backgroundColor =
-            colors[Math.floor(Math.random() * colors.length)];
-          decoration.style.top = `${-20 - Math.random() * 50}px`;
-          decoration.style.left = `${Math.random() * 100}%`;
-          cake.appendChild(decoration);
-        }
-      }
 
       // Blow out a candle when clicked or hovered
       function blowOutCandle() {
@@ -846,6 +795,9 @@
 
       // Show the wish message when all candles are blown
       function showWishMessage() {
+        // Hide instruction text
+        document.getElementById("instructionText").classList.add("hidden");
+        
         document.getElementById("wishMessage").classList.add("show");
         createFireworks();
       }
@@ -853,6 +805,26 @@
       // Close the wish message
       function closeWishMessage() {
         document.getElementById("wishMessage").classList.remove("show");
+        // Start typing the letter after closing the message
+        setTimeout(startTypingLetter, 500);
+      }
+
+      // Typing effect for letter
+      function startTypingLetter() {
+        const letterContent = "我最亲爱的妈妈：\n\n当我坐在这里回想我们在一起的所有时光，我不禁微笑。从您温柔的叮咛到无微不至的关怀，您用爱填满了我的生命。您是我最坚强的后盾，是我人生路上最温暖的港湾。\n\n我想让您知道，有您在我的生命中是多么幸运。您的善良、智慧和无私的爱，让每一天都充满阳光。您教会了我如何去爱，如何坚强，如何面对生活。\n\n妈妈，我爱您！感谢您给予我生命，陪伴我成长。您的爱是我前进的动力，您的笑容是我最大的幸福。愿您永远健康快乐，愿我能成为您的骄傲！\n\n永远爱您的孩子\n敬上";
+        
+        const textElement = document.getElementById('typed-text');
+        let index = 0;
+        
+        function typeChar() {
+          if (index < letterContent.length) {
+            textElement.textContent += letterContent.charAt(index);
+            index++;
+            setTimeout(typeChar, 30);
+          }
+        }
+        
+        typeChar();
       }
 
       // Create fireworks effect
@@ -883,17 +855,15 @@
 
       // Navigation functions
       function goBack() {
-        // Replace with actual back URL
-
         window.location.href = "memorylane.html";
       }
 
       function goNext() {
-        // Replace with actual next URL
-
-        window.location.href = "letter.html";
+        window.location.href = "index.html";
       }
     </script>
 
+    <!-- Signature -->
+    <div style="position: fixed; bottom: 10px; right: 20px; font-size: 0.75rem; color: rgba(61, 51, 58, 0.3); font-weight: 300; letter-spacing: 0.05em; z-index: 1000; pointer-events: none;">Made with love. 2024.</div>
     </body>
 </html>
