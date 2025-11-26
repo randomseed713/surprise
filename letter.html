@@ -41,7 +41,7 @@
         }
 
         h1 {
-            font-size: 2.8rem;
+            font-size: clamp(1.5rem, 5vw, 2.8rem);
             font-weight: 600;
             color: #1d1d1f;
             margin-bottom: 15px;
@@ -53,7 +53,7 @@
             background: rgba(255, 255, 255, 0.8);
             backdrop-filter: blur(20px) saturate(180%);
             border-radius: 30px;
-            padding: 40px;
+            padding: clamp(20px, 5vw, 40px);
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
             margin-bottom: 40px;
             position: relative;
@@ -62,13 +62,15 @@
         }
 
         .letter {
-            font-size: 1.1rem;
+            font-size: clamp(0.95rem, 2.5vw, 1.1rem);
             line-height: 1.8;
             color: #1d1d1f;
             position: relative;
             z-index: 2;
             min-height: 200px;
             font-weight: 400;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
         }
 
         .video-container {
@@ -193,27 +195,36 @@
 
         /* Responsive Design */
         @media (max-width: 768px) {
-            h1 {
-                font-size: 2rem;
-            }
-
             .container {
                 padding: 15px;
             }
 
             .letter-container {
-                padding: 20px;
+                border-radius: 20px;
             }
-
-            .letter {
-                font-size: 1rem;
-            }
-
-
 
             .floating-element {
                 max-width: 40px;
                 max-height: 40px;
+            }
+
+            .back-button {
+                padding: 10px 24px;
+                font-size: 0.95rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 10px;
+            }
+
+            .letter-container {
+                border-radius: 15px;
+            }
+
+            .floating-element {
+                display: none;
             }
         }
     </style>

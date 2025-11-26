@@ -65,7 +65,7 @@
       }
 
       .header h1 {
-        font-size: 3.5rem;
+        font-size: clamp(1.8rem, 6vw, 3.5rem);
         font-weight: 600;
         color: #1d1d1f;
         margin-bottom: 1rem;
@@ -74,14 +74,14 @@
       }
 
       .header p {
-        font-size: 1.3rem;
+        font-size: clamp(1rem, 3vw, 1.3rem);
         font-weight: 400;
         color: #6e6e73;
         max-width: 700px;
         margin: 0 auto;
         line-height: 1.6;
         background: rgba(255, 255, 255, 0.6);
-        padding: 1.5rem 2rem;
+        padding: clamp(1rem, 3vw, 1.5rem) clamp(1rem, 4vw, 2rem);
         border-radius: 20px;
         box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
         backdrop-filter: blur(20px);
@@ -102,14 +102,14 @@
       }
 
       .btn {
-        padding: 0.8rem 1.8rem;
+        padding: clamp(0.6rem, 2vw, 0.8rem) clamp(1.2rem, 4vw, 1.8rem);
         margin: 0 0.5rem;
         background: linear-gradient(135deg, #ff6b9d 0%, #c44569 100%);
         color: white;
         border: none;
         border-radius: 980px;
         cursor: pointer;
-        font-size: 1rem;
+        font-size: clamp(0.9rem, 2.5vw, 1rem);
         font-weight: 500;
         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         display: flex;
@@ -160,8 +160,8 @@
 
       .memory-card {
         flex: 0 0 auto;
-        width: 300px;
-        height: 400px;
+        width: clamp(260px, 80vw, 300px);
+        height: clamp(340px, 100vw, 400px);
         position: relative;
         border-radius: 24px;
         overflow: hidden;
@@ -197,11 +197,11 @@
         background: rgba(255, 255, 255, 0.95);
         backdrop-filter: blur(20px);
         color: #1d1d1f;
-        padding: 1.5rem;
+        padding: clamp(1rem, 3vw, 1.5rem);
         transition: bottom 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
         border-bottom-left-radius: 24px;
         border-bottom-right-radius: 24px;
-        font-size: 1rem;
+        font-size: clamp(0.9rem, 2.5vw, 1rem);
         font-weight: 400;
         line-height: 1.5;
       }
@@ -459,48 +459,74 @@
       }
 
       @media (max-width: 768px) {
-        .header h1 {
-          font-size: 2.5rem;
-        }
-
-        .memory-card {
-          width: 250px;
-          height: 330px;
+        .memory-lane-container {
+          padding: 1.5rem 1rem;
         }
 
         .gallery {
           gap: 1rem;
+          padding: 1rem 0;
         }
 
         .sticker {
           width: 45px;
           height: 45px;
         }
+
+        .card-tape {
+          width: 80px;
+          height: 30px;
+        }
+
+        .slideshow-controls {
+          flex-wrap: wrap;
+        }
+
+        .btn {
+          margin: 0.3rem;
+        }
       }
 
       @media (max-width: 480px) {
-        .header h1 {
-          font-size: 2rem;
+        .memory-lane-container {
+          padding: 1rem 0.5rem;
         }
 
-        .header p {
-          font-size: 1rem;
-        }
-
-        .memory-card {
-          width: 220px;
-          height: 300px;
+        .header {
+          margin-bottom: 2rem;
         }
 
         .navigation-buttons {
           flex-direction: column;
           gap: 1rem;
           align-items: center;
+          padding: 0 1rem;
         }
 
         .btn {
           width: 100%;
-          max-width: 200px;
+          max-width: 280px;
+          margin: 0;
+        }
+
+        .sticker {
+          width: 35px;
+          height: 35px;
+        }
+
+        .card-sticker {
+          width: 30px;
+          height: 30px;
+        }
+
+        .balloon {
+          width: 40px;
+          height: 50px;
+        }
+
+        /* 在移动端点击卡片时显示说明文字 */
+        .memory-card:active .memory-caption {
+          bottom: 0;
         }
       }
     </style>
