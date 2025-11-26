@@ -3,19 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Magical Birthday Cake</title>
+    <title>给妈妈的爱心蛋糕</title>
     <style>
       /* Global Styles */
       * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial,
-          sans-serif;
+        font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', Arial, sans-serif;
       }
 
       body {
-        background: linear-gradient(135deg, #ffcce6, #c4e0ff);
+        background: linear-gradient(135deg, #ffeef8 0%, #fff5f7 50%, #f0f9ff 100%);
         min-height: 100vh;
         display: flex;
         flex-direction: column;
@@ -260,32 +259,32 @@
         left: 50%;
         transform: translate(-50%, -50%) scale(0);
         background: rgba(255, 255, 255, 0.95);
-        padding: 25px;
-        border-radius: 20px;
-        box-shadow: 0 10px 30px rgba(255, 105, 180, 0.8),
-          0 0 20px rgba(255, 255, 255, 0.8), 0 0 40px rgba(255, 51, 102, 0.4);
+        backdrop-filter: blur(20px) saturate(180%);
+        padding: 40px;
+        border-radius: 30px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
         text-align: center;
         z-index: 100;
         opacity: 0;
         width: 90%;
-        max-width: 400px;
-        transition: all 0.5s ease;
-        border: 3px solid rgba(255, 255, 255, 0.7);
+        max-width: 450px;
+        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        border: 1px solid rgba(255, 255, 255, 0.8);
       }
 
       .wish-message.show {
         transform: translate(-50%, -50%) scale(1);
         opacity: 1;
-        animation: bounceIn 0.8s;
+        animation: bounceIn 0.8s cubic-bezier(0.4, 0, 0.2, 1);
       }
 
       @keyframes bounceIn {
         0% {
-          transform: translate(-50%, -50%) scale(0);
+          transform: translate(-50%, -50%) scale(0.8);
           opacity: 0;
         }
         60% {
-          transform: translate(-50%, -50%) scale(1.1);
+          transform: translate(-50%, -50%) scale(1.02);
           opacity: 1;
         }
         100% {
@@ -295,22 +294,19 @@
       }
 
       .wish-message h2 {
-        color: #ff3366;
-        font-size: 28px;
+        font-size: 32px;
+        font-weight: 600;
         margin-bottom: 15px;
-        text-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
-        background: linear-gradient(45deg, #ff3366, #ff66b3);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
+        color: #1d1d1f;
+        letter-spacing: -0.02em;
       }
 
       .wish-message p {
-        color: #333;
-        font-size: 20px;
-        margin-bottom: 20px;
-        line-height: 1.5;
-        font-weight: 500;
+        color: #6e6e73;
+        font-size: 18px;
+        margin-bottom: 25px;
+        line-height: 1.6;
+        font-weight: 400;
       }
 
       /* Fireworks */
@@ -353,27 +349,27 @@
       }
 
       .btn {
-        padding: 12px 24px;
-        background: linear-gradient(to right, #ff85a2, #ff3366);
+        padding: 12px 28px;
+        background: linear-gradient(135deg, #ff6b9d 0%, #c44569 100%);
         color: white;
         border: none;
-        border-radius: 30px;
+        border-radius: 980px;
         cursor: pointer;
         font-size: 16px;
-        font-weight: 600;
-        box-shadow: 0 5px 15px rgba(255, 51, 102, 0.4);
-        transition: all 0.3s ease;
+        font-weight: 500;
+        box-shadow: 0 4px 16px rgba(255, 107, 157, 0.3);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         outline: none;
+        letter-spacing: 0.01em;
       }
 
       .btn:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 8px 20px rgba(255, 51, 102, 0.6);
+        transform: translateY(-2px) scale(1.02);
+        box-shadow: 0 8px 24px rgba(255, 107, 157, 0.4);
       }
 
       .btn:active {
-        transform: translateY(-1px);
-        box-shadow: 0 5px 10px rgba(255, 51, 102, 0.4);
+        transform: scale(0.98);
       }
 
       /* Improved Responsive Design */
@@ -659,15 +655,15 @@
 
     <!-- Enhanced Wish Message Popup -->
     <div class="wish-message" id="wishMessage" bis_skin_checked="1">
-      <h2>✨ Happy Birthday! ✨</h2>
-      <p>Make a wish, Bestie! May all your dreams come true! 🎂✨</p>
-      <button class="btn" onclick="closeWishMessage()">Thank you! ❤️</button>
+      <h2>✨ 妈妈，我爱您！✨</h2>
+      <p>亲爱的妈妈，许个愿吧！愿您永远健康快乐，所有的梦想都能实现！💖✨</p>
+      <button class="btn" onclick="closeWishMessage()">谢谢您！❤️</button>
     </div>
 
     <!-- Navigation Buttons -->
     <div class="nav-buttons" bis_skin_checked="1">
-      <button class="btn" onclick="goBack()">◀ Back to Memory Lane</button>
-      <button class="btn" onclick="goNext()">Next Surprise ▶</button>
+      <button class="btn" onclick="goBack()">◀ 返回</button>
+      <button class="btn" onclick="goNext()">下一个惊喜 ▶</button>
     </div>
 
     <script>

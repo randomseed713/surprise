@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A Special Surprise For You ✨</title>
+    <title>给您的特别惊喜 ✨</title>
     <style>
         /* Base Styles */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', Arial, sans-serif;
         }
 
         body {
-            background: linear-gradient(135deg, #f8e1f4, #e0c3f7, #c2e6ff);
+            background: linear-gradient(135deg, #ffeef8 0%, #fff5f7 50%, #f0f9ff 100%);
             background-size: 400% 400%;
             animation: gradientBackground 15s ease infinite;
             min-height: 100vh;
@@ -41,43 +41,34 @@
         }
 
         h1 {
-            font-size: 2.5rem;
-            color: #6a4c93;
+            font-size: 2.8rem;
+            font-weight: 600;
+            color: #1d1d1f;
             margin-bottom: 15px;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+            letter-spacing: -0.02em;
         }
 
         /* Letter Section */
         .letter-container {
-            background: rgba(255, 255, 255, 0.7);
-            border-radius: 20px;
-            padding: 30px;
-            box-shadow: 0 0 20px rgba(106, 76, 147, 0.3);
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px) saturate(180%);
+            border-radius: 30px;
+            padding: 40px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
             margin-bottom: 40px;
             position: relative;
             overflow: hidden;
-        }
-
-        .letter-container::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            border-radius: 20px;
-            box-shadow: inset 0 0 15px rgba(255, 215, 232, 0.7);
-            pointer-events: none;
-            z-index: 1;
+            border: 1px solid rgba(255, 255, 255, 0.9);
         }
 
         .letter {
-            font-size: 1.2rem;
-            line-height: 1.6;
-            color: #333;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #1d1d1f;
             position: relative;
             z-index: 2;
             min-height: 200px;
+            font-weight: 400;
         }
 
         .video-container {
@@ -100,186 +91,31 @@
             border: none;
         }
 
-        /* Surprise Button */
-        .surprise-button-container {
-            text-align: center;
-            margin: 30px 0;
-            position: relative;
-        }
 
-        .surprise-button {
-            background: linear-gradient(45deg, #ff9a9e, #fad0c4, #fad0c4, #a18cd1);
-            background-size: 300% 300%;
-            animation: gradientButton 5s ease infinite;
-            color: white;
-            font-size: 1.5rem;
-            font-weight: bold;
-            padding: 15px 40px;
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            box-shadow: 0 5px 20px rgba(161, 140, 209, 0.5);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            z-index: 2;
-        }
 
-        .surprise-button::before {
-            content: '';
-            position: absolute;
-            top: -5px;
-            left: -5px;
-            right: -5px;
-            bottom: -5px;
-            border-radius: 55px;
-            background: linear-gradient(45deg, #ffccf9, #b28cff, #b28cff, #9cecff);
-            background-size: 300% 300%;
-            animation: gradientButton 5s ease infinite;
-            z-index: -1;
-            opacity: 0.6;
-            filter: blur(8px);
-        }
 
-        .surprise-button:hover {
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 8px 25px rgba(161, 140, 209, 0.7);
-        }
-
-        .surprise-button:active {
-            transform: translateY(1px);
-        }
-
-        /* Surprise Modal */
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-        }
-
-        .modal {
-            background: white;
-            width: 90%;
-            max-width: 600px;
-            border-radius: 20px;
-            padding: 30px;
-            position: relative;
-            transform: scale(0.8);
-            transition: all 0.3s ease;
-            box-shadow: 0 0 30px rgba(255, 215, 232, 0.8);
-            text-align: center;
-        }
-
-        .modal-overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .modal-overlay.active .modal {
-            transform: scale(1);
-        }
-
-        .modal-header {
-            margin-bottom: 20px;
-        }
-
-        .modal-body {
-            margin-bottom: 30px;
-        }
-
-        .modal-close {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            font-size: 24px;
-            color: #6a4c93;
-            background: none;
-            border: none;
-            cursor: pointer;
-        }
-
-        /* Playlist Styling */
-        .playlist {
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 15px;
-            padding: 20px;
-            max-height: 300px;
-            overflow-y: auto;
-        }
-
-        .playlist-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 10px;
-            padding: 10px;
-            border-radius: 10px;
-            background: rgba(240, 240, 255, 0.7);
-            transition: all 0.2s ease;
-        }
-
-        .playlist-item:hover {
-            background: rgba(225, 225, 255, 0.9);
-            transform: translateX(5px);
-        }
-
-        .playlist-item img {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            margin-right: 15px;
-            object-fit: cover;
-        }
-
-        .playlist-item-info {
-            flex-grow: 1;
-            text-align: left;
-        }
-
-        .playlist-item-title {
-            font-weight: bold;
-            color: #6a4c93;
-        }
-
-        .playlist-item-artist {
-            font-size: 0.9rem;
-            color: #888;
-        }
-
-        .playlist-item-play {
-            background: none;
-            border: none;
-            color: #6a4c93;
-            cursor: pointer;
-            font-size: 1.2rem;
-        }
 
         /* Back Button */
         .back-button {
             display: inline-block;
             margin-top: 20px;
-            padding: 10px 20px;
-            background: rgba(255, 255, 255, 0.7);
-            border: 2px solid #6a4c93;
-            color: #6a4c93;
-            border-radius: 30px;
+            padding: 12px 28px;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 107, 157, 0.3);
+            color: #ff6b9d;
+            border-radius: 980px;
             text-decoration: none;
-            font-weight: bold;
-            transition: all 0.3s ease;
+            font-weight: 500;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            letter-spacing: 0.01em;
         }
 
         .back-button:hover {
-            background: #6a4c93;
+            background: linear-gradient(135deg, #ff6b9d 0%, #c44569 100%);
             color: white;
+            border-color: transparent;
+            transform: translateY(-2px);
         }
 
         /* Floating Elements */
@@ -294,32 +130,7 @@
             animation-direction: alternate;
         }
 
-        /* Music Controls */
-        .music-controls {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 100;
-            background: rgba(255, 255, 255, 0.7);
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            box-shadow: 0 0 10px rgba(106, 76, 147, 0.3);
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
 
-        .music-controls:hover {
-            transform: scale(1.1);
-        }
-
-        .music-controls i {
-            color: #6a4c93;
-            font-size: 24px;
-        }
 
         /* Animations */
         @keyframes fadeIn {
@@ -398,10 +209,7 @@
                 font-size: 1rem;
             }
 
-            .surprise-button {
-                font-size: 1.2rem;
-                padding: 12px 30px;
-            }
+
 
             .floating-element {
                 max-width: 40px;
@@ -414,7 +222,7 @@
 <body>
     <div class="container">
         <header>
-            <h1>For My Dearest Friend ❤️</h1>
+            <h1>给我最亲爱的妈妈 </h1>
         </header>
 
         <div class="letter-container">
@@ -426,91 +234,19 @@
             <iframe src="about:blank" frameborder="0" allowfullscreen></iframe>
         </div>
 
-        <div class="surprise-button-container">
-            <button class="surprise-button" id="surprise-button">
-                Click for a Surprise! 🎁
-            </button>
-        </div>
+
 
         <div class="navigation">
             <a href="javascript:history.back()" class="back-button">
-                <i class="fas fa-arrow-left"></i> Back to Birthday Cake
+                <i class="fas fa-arrow-left"></i> 返回
             </a>
         </div>
     </div>
 
     <!-- Modal for Surprise -->
-    <div class="modal-overlay" id="modal-overlay">
-        <div class="modal">
-            <button class="modal-close" id="modal-close">×</button>
-            <div class="modal-header">
-                <h2>🎉 Your Special Surprise! 🎉</h2>
-            </div>
-            <div class="modal-body">
-                <div class="playlist">
-                    <h3 style="margin-bottom: 15px;">Songs That Remind Me of Us 💕</h3>
-                    <div class="playlist-item">
-                        <img src="3.jpg" alt="Song cover">
-                        <div class="playlist-item-info">
-                            <div class="playlist-item-title">Our Favorite Memory</div>
-                            <div class="playlist-item-artist">That Artist You Love</div>
-                        </div>
-                        <button class="playlist-item-play"><i class="fas fa-play"></i></button>
-                    </div>
-                    <div class="playlist-item">
-                        <img src="1.jpg" alt="Song cover">
-                        <div class="playlist-item-info">
-                            <div class="playlist-item-title">That Summer Night</div>
-                            <div class="playlist-item-artist">The Adventure Band</div>
-                        </div>
-                        <button class="playlist-item-play"><i class="fas fa-play"></i></button>
-                    </div>
-                    <div class="playlist-item">
-                        <img src="6.jpg" alt="Song cover">
-                        <div class="playlist-item-info">
-                            <div class="playlist-item-title">Inside Joke Anthem</div>
-                            <div class="playlist-item-artist">Laugh Out Loud</div>
-                        </div>
-                        <button class="playlist-item-play"><i class="fas fa-play"></i></button>
-                    </div>
-                    <div class="playlist-item">
-                        <img src="2.jpeg" alt="Song cover">
-                        <div class="playlist-item-info">
-                            <div class="playlist-item-title">Remember When</div>
-                            <div class="playlist-item-artist">The Friendship Vibes</div>
-                        </div>
-                        <button class="playlist-item-play"><i class="fas fa-play"></i></button>
-                    </div>
-                    <div class="playlist-item">
-                        <img src="5.jpg" alt="Song cover">
-                        <div class="playlist-item-info">
-                            <div class="playlist-item-title">Birthday Wishes</div>
-                            <div class="playlist-item-artist">Happy Songs</div>
-                        </div>
-                        <button class="playlist-item-play"><i class="fas fa-play"></i></button>
-                    </div>
-                </div>
-                <div style="margin-top: 20px;">
-                    <a href="#" download class="back-button" style="background: #ffb6c1; border-color: #ffb6c1; color: white;">
-                        <i class="fas fa-download"></i> Download Your Digital Gift
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
 
-    <!-- Music Controls -->
-    <div class="music-controls" id="music-toggle">
-        <i class="fas fa-volume-mute" id="music-icon"></i>
-    </div>
 
-    <!-- Audio Elements -->
-    <audio id="click-sound" preload="auto">
-        <source src="https://cdn.pixabay.com/download/audio/2021/08/04/audio_bb630cc098.mp3?filename=cute-notification-ringtone-1-173850.mp3" type="audio/mpeg">
-    </audio>
-    <audio id="background-music" loop>
-        <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8c8a73467.mp3?filename=relaxing-145038.mp3" type="audio/mpeg">
-    </audio>
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/canvas-confetti/1.5.1/confetti.browser.min.js"></script>
@@ -523,7 +259,7 @@
             }, 500);
 
             // Typewriter effect for letter
-            const letterContent = "My dearest friend,\n\nAs I sit here thinking about all our memories together, I can't help but smile. From our late-night talks to our spontaneous adventures, you've filled my life with so much joy and laughter. You've been my shoulder to cry on, my partner in crime, and my biggest supporter.\n\nOn your special day, I want you to know how grateful I am to have you in my life. You make every day brighter just by being you - kind, funny, and incredibly thoughtful.\n\nHappy Birthday to my favorite person in the world! Here's to many more years of friendship, laughter, and creating memories together.\n\nWith all my love,\n[Your Name]";
+            const letterContent = "我最亲爱的妈妈：\n\n当我坐在这里回想我们在一起的所有时光，我不禁微笑。从您温柔的叮咛到无微不至的关怀，您用爱填满了我的生命。您是我最坚强的后盾，是我人生路上最温暖的港湾。\n\n我想让您知道，有您在我的生命中是多么幸运。您的善良、智慧和无私的爱，让每一天都充满阳光。您教会了我如何去爱，如何坚强，如何面对生活。\n\n妈妈，我爱您！感谢您给予我生命，陪伴我成长。您的爱是我前进的动力，您的笑容是我最大的幸福。愿您永远健康快乐，愿我能成为您的骄傲！\n\n永远爱您的孩子\n敬上";
             
             new Typed('#typed-text', {
                 strings: [letterContent],
@@ -531,9 +267,7 @@
                 showCursor: true,
                 cursorChar: '|',
                 onComplete: function() {
-                    setTimeout(() => {
-                        document.querySelector('.surprise-button').classList.add('animate__animated', 'animate__pulse', 'animate__infinite');
-                    }, 1000);
+                    // Letter typing complete
                 }
             });
 
@@ -558,44 +292,9 @@
             // Cursor effect
             document.addEventListener('mousemove', createCursorEffect);
 
-            // Surprise button functionality
-            const surpriseButton = document.getElementById('surprise-button');
-            const modalOverlay = document.getElementById('modal-overlay');
-            const modalClose = document.getElementById('modal-close');
-            const clickSound = document.getElementById('click-sound');
 
-            surpriseButton.addEventListener('click', function() {
-                clickSound.play();
-                modalOverlay.classList.add('active');
-                confetti({
-                    particleCount: 100,
-                    spread: 70,
-                    origin: { y: 0.6 }
-                });
-            });
 
-            modalClose.addEventListener('click', function() {
-                modalOverlay.classList.remove('active');
-            });
 
-            // Music controls
-            const musicToggle = document.getElementById('music-toggle');
-            const musicIcon = document.getElementById('music-icon');
-            const backgroundMusic = document.getElementById('background-music');
-            let isMusicPlaying = false;
-
-            musicToggle.addEventListener('click', function() {
-                if (isMusicPlaying) {
-                    backgroundMusic.pause();
-                    musicIcon.classList.remove('fa-volume-up');
-                    musicIcon.classList.add('fa-volume-mute');
-                } else {
-                    backgroundMusic.play().catch(e => console.log('Audio play error:', e));
-                    musicIcon.classList.remove('fa-volume-mute');
-                    musicIcon.classList.add('fa-volume-up');
-                }
-                isMusicPlaying = !isMusicPlaying;
-            });
 
             // Helper Functions
             function createFloatingElement(element, index) {

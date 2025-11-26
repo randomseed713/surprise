@@ -3,23 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Memory Lane - Birthday Memories</title>
+    <title>回忆长廊 - 与妈妈的美好时光</title>
     <style>
-      @import url("https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;600&display=swap");
-
       * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        font-family: "Poppins", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', Arial, sans-serif;
       }
 
       body {
         background: linear-gradient(
           135deg,
-          #ffcee6 0%,
-          #ffd6f1 50%,
-          #e4f9ff 100%
+          #ffeef8 0%,
+          #fff5f7 50%,
+          #f0f9ff 100%
         );
         min-height: 100vh;
         overflow-x: hidden;
@@ -68,23 +66,26 @@
 
       .header h1 {
         font-size: 3.5rem;
-        color: #ff4e91;
+        font-weight: 600;
+        color: #1d1d1f;
         margin-bottom: 1rem;
-        font-family: "Pacifico", cursive;
-        text-shadow: 3px 3px 0px rgba(255, 165, 213, 0.5);
+        letter-spacing: -0.02em;
         animation: heartbeat 1.5s ease-in-out infinite;
       }
 
       .header p {
-        font-size: 1.2rem;
-        color: #8858a3;
+        font-size: 1.3rem;
+        font-weight: 400;
+        color: #6e6e73;
         max-width: 700px;
         margin: 0 auto;
         line-height: 1.6;
-        background: rgba(255, 255, 255, 0.5);
-        padding: 1rem;
+        background: rgba(255, 255, 255, 0.6);
+        padding: 1.5rem 2rem;
         border-radius: 20px;
-        box-shadow: 0 5px 15px rgba(255, 105, 180, 0.2);
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.8);
       }
 
       .gallery-container {
@@ -101,25 +102,30 @@
       }
 
       .btn {
-        padding: 0.8rem 1.5rem;
+        padding: 0.8rem 1.8rem;
         margin: 0 0.5rem;
-        background: linear-gradient(45deg, #ff6ec4, #7873f5);
+        background: linear-gradient(135deg, #ff6b9d 0%, #c44569 100%);
         color: white;
         border: none;
-        border-radius: 25px;
+        border-radius: 980px;
         cursor: pointer;
         font-size: 1rem;
-        transition: all 0.3s ease;
+        font-weight: 500;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         display: flex;
         align-items: center;
         justify-content: center;
-        box-shadow: 0 4px 15px rgba(255, 110, 196, 0.5);
+        box-shadow: 0 4px 16px rgba(255, 107, 157, 0.3);
+        letter-spacing: 0.01em;
       }
 
       .btn:hover {
-        background: linear-gradient(45deg, #7873f5, #ff6ec4);
-        transform: translateY(-2px) scale(1.05);
-        box-shadow: 0 6px 20px rgba(255, 110, 196, 0.7);
+        transform: translateY(-2px) scale(1.02);
+        box-shadow: 0 8px 24px rgba(255, 107, 157, 0.4);
+      }
+
+      .btn:active {
+        transform: scale(0.98);
       }
 
       .btn i {
@@ -157,13 +163,14 @@
         width: 300px;
         height: 400px;
         position: relative;
-        border-radius: 20px;
+        border-radius: 24px;
         overflow: hidden;
-        box-shadow: 0 10px 25px rgba(255, 105, 180, 0.3);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
         transform: translateY(50px) rotate(var(--rotate, 0deg));
         opacity: 0;
         transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        border: 8px solid white;
+        border: 1px solid rgba(255, 255, 255, 0.8);
+        background: white;
       }
 
       .memory-card.visible {
@@ -187,14 +194,16 @@
         bottom: -100%;
         left: 0;
         width: 100%;
-        background: rgba(255, 105, 180, 0.85);
-        color: white;
-        padding: 1.2rem;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(20px);
+        color: #1d1d1f;
+        padding: 1.5rem;
         transition: bottom 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
-        border-bottom-left-radius: 15px;
-        border-bottom-right-radius: 15px;
-        font-size: 1.1rem;
-        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+        border-bottom-left-radius: 24px;
+        border-bottom-right-radius: 24px;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
       }
 
       .memory-card:hover .memory-caption {
@@ -2115,20 +2124,15 @@
         "
         bis_skin_checked="1"
       >
-        <h1>Our Memory Lane</h1>
-        <p>
-          A journey through the most incredible moments we've shared together.
-          Hover over each photo to see why these memories mean so much to me!
-          ✨💖
-        </p>
+        <h1>我们的回忆长廊</h1>
       </div>
 
       <div class="slideshow-controls" style="opacity: 1" bis_skin_checked="1">
         <button id="startSlideshow" class="btn" style="display: flex">
-          <span>▶ Start Slideshow</span>
+          <span>▶ 开始</span>
         </button>
         <button id="pauseSlideshow" class="btn" style="display: none">
-          <span>⏸ Pause Slideshow</span>
+          <span>⏸ 暂停</span>
         </button>
       </div>
 
@@ -2155,8 +2159,8 @@
             ></div>
             <img class="memory-img" src="1.jpg" alt="Memory 1" />
             <div class="memory-caption" bis_skin_checked="1">
-              Remember when we got lost hiking and found that amazing waterfall?
-              Best wrong turn ever! 😂
+              还记得我们一起去爬山的时候吗？妈妈，您总是那么有活力！
+              那是最美好的时光！😂
             </div>
             <div class="card-sticker" bis_skin_checked="1">
               <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
@@ -2192,10 +2196,10 @@
               style="--rotate: 6deg"
               bis_skin_checked="1"
             ></div>
-            <img class="memory-img" src="2.jpeg" alt="Memory 2" />
+            <img class="memory-img" src="2.jpg" alt="Memory 2" />
             <div class="memory-caption" bis_skin_checked="1">
-              That time we stayed up all night just talking and watching the
-              sunrise. I've never laughed so hard in my life!
+              那次我们一起聊天到深夜，看日出的时光。
+              妈妈，您的笑容是我最珍贵的回忆！
             </div>
             <div class="card-sticker" bis_skin_checked="1">
               <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
@@ -2233,8 +2237,8 @@
             ></div>
             <img class="memory-img" src="3.jpg" alt="Memory 3" />
             <div class="memory-caption" bis_skin_checked="1">
-              Our first road trip together! You fell asleep and I drew a tiny
-              mustache on you with a marker. You didn't notice for HOURS!
+              我们第一次一起旅行！妈妈，您带我看了那么多美丽的风景，
+              教会了我欣赏生活中的美好！
             </div>
             <div class="card-sticker" bis_skin_checked="1">
               <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
@@ -2272,9 +2276,8 @@
             ></div>
             <img class="memory-img" src="4.jpg" alt="Memory 4" />
             <div class="memory-caption" bis_skin_checked="1">
-              Remember our cooking disaster when we tried to make that fancy
-              recipe? The smoke alarm going off, but the pizza we ordered after
-              was the best ever!
+              还记得我们一起做饭的时光吗？妈妈，您做的每一道菜
+              都充满了爱的味道，是世界上最美味的！
             </div>
             <div class="card-sticker" bis_skin_checked="1">
               <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
@@ -2312,8 +2315,8 @@
             ></div>
             <img class="memory-img" src="5.jpg" alt="Memory 5" />
             <div class="memory-caption" bis_skin_checked="1">
-              Our camping trip under the stars. You were terrified of that tiny
-              spider and jumped so high! Still my favorite memory.
+              在星空下的美好时光。妈妈，您总是给我最温暖的陪伴，
+              这是我最珍贵的回忆。
             </div>
             <div class="card-sticker" bis_skin_checked="1">
               <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
@@ -2351,8 +2354,8 @@
             ></div>
             <img class="memory-img" src="7.jpg" alt="Memory 6" />
             <div class="memory-caption" bis_skin_checked="1">
-              That concert where we danced until our feet hurt. Worth every
-              blister!
+              那次我们一起欢笑的时光。妈妈，您的笑声
+              是我听过最动听的音乐！
             </div>
             <div class="card-sticker" bis_skin_checked="1">
               <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
@@ -2390,8 +2393,8 @@
             ></div>
             <img class="memory-img" src="8.jpg" alt="Memory 7" />
             <div class="memory-caption" bis_skin_checked="1">
-              When we built that epic blanket fort during the storm and watched
-              movies all day. Best rainy day ever!
+              下雨天我们一起在家的温馨时光。妈妈，有您在身边，
+              每一天都是最美好的一天！
             </div>
             <div class="card-sticker" bis_skin_checked="1">
               <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
@@ -2429,8 +2432,8 @@
             ></div>
             <img class="memory-img" src="1.jpg" alt="Memory 8" />
             <div class="memory-caption" bis_skin_checked="1">
-              Our spontaneous beach day when we skipped class. I still find sand
-              in my backpack sometimes!
+              我们一起去海边的快乐时光。妈妈，您给了我
+              最自由快乐的童年！
             </div>
             <div class="card-sticker" bis_skin_checked="1">
               <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
@@ -2468,8 +2471,8 @@
             ></div>
             <img class="memory-img" src="2.jpeg" alt="Memory 9" />
             <div class="memory-caption" bis_skin_checked="1">
-              You've always been there for me through thick and thin. I'm so
-              grateful for your friendship. ❤️
+              妈妈，您一直陪伴在我身边，无论顺境逆境。
+              我永远感激您的爱与付出。❤️
             </div>
             <div class="card-sticker" bis_skin_checked="1">
               <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
@@ -2499,8 +2502,8 @@
             ></div>
             <img class="memory-img" src="3.jpg" alt="Memory 10" />
             <div class="memory-caption" bis_skin_checked="1">
-              Happy Birthday to my best friend in the whole world! Here's to
-              many more adventures together!
+              妈妈，我爱您！您是我生命中最重要的人！
+              愿我们一起创造更多美好的回忆！
             </div>
             <div class="card-sticker" bis_skin_checked="1">
               <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
@@ -2533,10 +2536,10 @@
         bis_skin_checked="1"
       >
         <button id="backButton" class="btn">
-          <span>← Back to Welcome</span>
+          <span>← 返回</span>
         </button>
         <button id="nextButton" class="btn">
-          <span>✨ Next Surprise! ✨</span>
+          <span>✨ 下一个惊喜！✨</span>
         </button>
       </div>
     </div>
@@ -2553,15 +2556,15 @@
         {
           image: "1.jpg",
           caption:
-            "Remember when we got lost hiking and found that amazing waterfall? Best wrong turn ever! 😂",
+            "还记得我们一起去爬山的时候吗？妈妈，您总是那么有活力！那是最美好的时光！😂",
           isGif: false,
           rotationAngle: -2,
           emoji: "🌊",
         },
         {
-          image: "2.jpeg",
+          image: "2.jpg",
           caption:
-            "That time we stayed up all night just talking and watching the sunrise. I've never laughed so hard in my life!",
+            "那次我们一起聊天到深夜，看日出的时光。妈妈，您的笑容是我最珍贵的回忆！",
           isGif: false,
           rotationAngle: 3,
           emoji: "🌅",
@@ -2569,7 +2572,7 @@
         {
           image: "3.jpg",
           caption:
-            "Our first road trip together! You fell asleep and I drew a tiny mustache on you with a marker. You didn't notice for HOURS!",
+            "我们第一次一起旅行！妈妈，您带我看了那么多美丽的风景，教会了我欣赏生活中的美好！",
           isGif: true,
           rotationAngle: -1,
           emoji: "🚗",
@@ -2577,7 +2580,7 @@
         {
           image: "4.jpg",
           caption:
-            "Remember our cooking disaster when we tried to make that fancy recipe? The smoke alarm going off, but the pizza we ordered after was the best ever!",
+            "还记得我们一起做饭的时光吗？妈妈，您做的每一道菜都充满了爱的味道，是世界上最美味的！",
           isGif: false,
           rotationAngle: 2,
           emoji: "🍕",
@@ -2585,7 +2588,7 @@
         {
           image: "5.jpg",
           caption:
-            "Our camping trip under the stars. You were terrified of that tiny spider and jumped so high! Still my favorite memory.",
+            "在星空下的美好时光。妈妈，您总是给我最温暖的陪伴，这是我最珍贵的回忆。",
           isGif: false,
           rotationAngle: -3,
           emoji: "🏕️",
@@ -2593,7 +2596,7 @@
         {
           image: "7.jpg",
           caption:
-            "That concert where we danced until our feet hurt. Worth every blister!",
+            "那次我们一起欢笑的时光。妈妈，您的笑声是我听过最动听的音乐！",
           isGif: true,
           rotationAngle: 1,
           emoji: "🎵",
@@ -2601,7 +2604,7 @@
         {
           image: "8.jpg",
           caption:
-            "When we built that epic blanket fort during the storm and watched movies all day. Best rainy day ever!",
+            "下雨天我们一起在家的温馨时光。妈妈，有您在身边，每一天都是最美好的一天！",
           isGif: false,
           rotationAngle: -2,
           emoji: "🏰",
@@ -2609,7 +2612,7 @@
         {
           image: "1.jpg",
           caption:
-            "Our spontaneous beach day when we skipped class. I still find sand in my backpack sometimes!",
+            "我们一起去海边的快乐时光。妈妈，您给了我最自由快乐的童年！",
           isGif: false,
           rotationAngle: 2,
           emoji: "🏖️",
@@ -2617,7 +2620,7 @@
         {
           image: "2.jpeg",
           caption:
-            "You've always been there for me through thick and thin. I'm so grateful for your friendship. ❤️",
+            "妈妈，您一直陪伴在我身边，无论顺境逆境。我永远感激您的爱与付出。❤️",
           isGif: false,
           rotationAngle: -1,
           emoji: "💕",
@@ -2625,10 +2628,10 @@
         {
           image: "3.jpg",
           caption:
-            "Happy Birthday to my best friend in the whole world! Here's to many more adventures together!",
+            "妈妈，我爱您！您是我生命中最重要的人！愿我们一起创造更多美好的回忆！",
           isGif: true,
           rotationAngle: 3,
-          emoji: "🎂",
+          emoji: "💖",
         },
       ];
 
